@@ -62,80 +62,125 @@
             <!-- Added headers to the Project Statement for better clarity-->
             <div class="description">
                 <p>
-                        Throughout the duration of this course, we explored a variety of 
-                        concepts related to the dynamics of power in technology and computing. 
-                        We focused particularly on machine learning algorithms, and analyzed 
-                        the many unspoken ways these algorithms functioned as extensions of 
-                        prejudice against users of color. Using Joy Buolamwini’s Unmasking AI, 
-                        we learned of the danger of biased machine learning algorithms left 
-                        unchecked. The original idea for our Teachable Machine was to have it 
-                        differentiate between different books and stuffed animals with captions 
-                        underneath, more or less in the same style as the demonstration video. 
-                        However, after taking our own photos and beginning to work on the 
-                        project, we came to the realization that with the mix of the project 
-                        statement part and directions for the assignment, this idea would not 
-                        have made the most sense as it’s not really connecting to anything we 
-                        learned in class or to any of the readings. It also didn’t connect to 
-                        Joy Buolamwini’s Unmasking AI in any way. After some talking we changed 
-                        the idea of our teachable machine from books and stuffed animals to 
-                        create a facial-expression recognition model that responds in real 
-                        time to a person looking into the camera. 
+                    Throughout the duration of this course, we explored a variety of 
+                    concepts related to the dynamics of power in technology and computing. 
+                    We focused particularly on machine learning algorithms, and analyzed 
+                    the many unspoken ways these algorithms functioned as extensions of 
+                    prejudice against users of color. Using Joy Buolamwini’s Unmasking AI, 
+                    we learned of the danger of biased machine learning algorithms left 
+                    unchecked. The original idea for our Teachable Machine was to have it 
+                    differentiate between different books and stuffed animals with captions 
+                    underneath, more or less in the same style as the demonstration video. 
+                    However, after taking our own photos and beginning to work on the 
+                    project, we came to the realization that with the mix of the project 
+                    statement part and directions for the assignment, this idea would not 
+                    have made the most sense as it’s not really connecting to anything we 
+                    learned in class or to any of the readings. It also didn’t connect to 
+                    Joy Buolamwini’s Unmasking AI in any way. After some talking we changed 
+                    the idea of our teachable machine from books and stuffed animals to 
+                    create a facial-expression recognition model that responds in real 
+                    time to a person looking into the camera. 
                 </p>
+                
                 <h2>Model Design and Function</h2>
                 <p>
-                        Our revised project aimed to train the model on five basic emotions: 
-                        happy, sad, angry, neutral, and eyebrow raise. When the camera scans 
-                        a user’s face, the system identifies the expression and displays a 
-                        matching emoji on the side of the screen. The project goal is to make 
-                        emotion detection simple and visual, using emojis as an easy way for 
-                        users to understand the output. Each emotion category will contain 
-                        multiple example images from the user’s webcam to help the Teachable 
-                        Machine learn the differences between expressions. After training, 
-                        the model will be exported and integrated into a simple web/app 
-                        interface so users can see their expression change in real time. 
-                        This approach works well because it is visual, interactive, and fun 
-                        but also demonstrates how machine learning can classify patterns in 
-                        human facial movement. 
-                        
-                        Practical real world applications of this technology include early
-                         childhood classroom settings, where students 
-                        could practice their social emotional learning through identifying and 
-                        recognizing the various facial expressions, and as an aid for those 
-                        with differing abilities to better engage with the world around them. 
-                        While working on my facial expression Teachable Machine, I began to 
-                        notice how fragile the model was. It performed well in the Teachable 
-                        Machine interface, but when I exported it into p5.js, its accuracy 
-                        immediately dropped. This connection reminded me of Joy Buolamwini’s 
-                        experience in “Unmasking AI” where she repeatedly shows that models 
-                        often work in carefully controlled environments but fail in real world 
-                        conditions. Like Joy’s description of the “coded gaze” where I saw how 
-                        my own model depended heavily on lighting, angle, facial features, and 
-                        the fact that we only trained it on one person’s face. If someone else 
-                        with a different skin tone, facial features, or lighting stood in front
-                         of the model, it might not read their expression correctly at all. 
-                         This made me more aware of how easily AI systems can misinterpret or 
-                         even exclude people, even when the project seems small or harmless. 
-                         One of the most important things I learned while building my model 
-                         was how strongly accuracy depends on dataset size. At first, I 
-                         collected around 5-15 images for each emotion assuming that the 
-                         Teachable Machine would handle the rest. But the model was quite 
-                         unstable. Angry and Eyebrow Raise were constantly getting mixed up 
-                         and Neutral rarely registered correctly. I realized that the model 
-                         was not actually learning the emotional categories, it was memorizing 
-                         small cues from a tiny dataset. It wasn’t until I added more pictures 
-                         to each class to over 100 examples (121 happy, 100 sad, 103 angry, 
-                         122 neutral, and 122 eyebrow raise) that the model’s prediction 
-                         became more reliable. This experience helped me understand one of 
-                         Buolamwini’s central arguments in Unmasking AI that machine learning 
-                         systems are only as good as the data they are trained on. Just as 
-                         facial recognition systems fail on populations that are 
-                         underrepresented in the training data, my model failed until each 
-                         category was represented with enough data. Even a simple emotion 
-                         recognition project showed me that insufficient data leads to 
-                         misclassification and fragile performance, exactly the kind of issues 
-                         Joy warns about on a much larger scale.
+                    Our revised project aimed to train the model on five basic emotions: 
+                    happy, sad, angry, neutral, and eyebrow raise. When the camera scans 
+                    a user’s face, the system identifies the expression and displays a 
+                    matching emoji on the side of the screen. The project goal is to make 
+                    emotion detection simple and visual, using emojis as an easy way for 
+                    users to understand the output. Each emotion category will contain 
+                    multiple example images from the user’s webcam to help the Teachable 
+                    Machine learn the differences between expressions. After training, 
+                    the model will be exported and integrated into a simple web/app 
+                    interface so users can see their expression change in real time. 
+                    This approach works well because it is visual, interactive, and fun 
+                    but also demonstrates how machine learning can classify patterns in 
+                    human facial movement. 
+                </p>
+                <p>
+                    Practical real world applications of this technology include early
+                    childhood classroom settings, where students could practice their social 
+                    emotional learning through identifying and recognizing the various facial 
+                    expressions, and as an aid for those with differing abilities to better 
+                    engage with the world around them.
+                </p>
+                
+                <h2>Model Fragility and the Coded Gaze</h2>
+                <p>
+                    While working on the facial expressions for our Teachable Machine, we began 
+                    to notice how fragile the model was. It performed well in the Teachable Machine 
+                    interface, but when we exported it into p5.js, its accuracy immediately dropped. 
+                    This experience reflects Buolamwini’s observation that facial recognition systems 
+                    often function only under tightly controlled conditions. Buolamwini describes 
+                    how her own system could detect her face only when she wore a white mask, but 
+                    when she removed it, “the detection box disappeared” and the system did not see 
+                    her dark-skinned face (Buolamwini, 2023, p. 10). This connects directly to her 
+                    concept of the coded gaze, which explains how “the priorities, preferences, and 
+                    prejudices of those who shape technology can propagate harm” (Buolamwini, 2023, 
+                    pp. 10–11). Similarly, our model depended heavily on lighting, camera angle, 
+                    facial features, and the fact that it was trained using only one person’s face. 
+                    If someone with different skin tone or facial structures stood in front of the 
+                    model, it often failed to classify their expression correctly. This made us more 
+                    aware of how easily AI systems can misinterpret or exclude people, even when a
+                     project seems small or harmless.
+                </p>
+                
+                <!-- Added explanation of how dataset size impacted model and further clarified
+                 how performance improvements were shown-->
+                <h2>Dataset Growth and Accuracy evaluation</h2>
+                <p>
+                    One of the most important things we learned while building my model 
+                    was how strongly accuracy depends on dataset size. At first, we 
+                    collected around 5-15 images for each emotion assuming that the 
+                    Teachable Machine would handle the rest. But the model was quite 
+                    unstable. Angry and Eyebrow Raise were constantly getting mixed up 
+                    and Neutral rarely registered correctly. I realized that the model 
+                    was not actually learning the emotional categories, it was memorizing 
+                    small cues from a tiny dataset. 
+                </p>
+                <p>
+                    It wasn’t until we added more pictures 
+                    to each class to over 100 examples (121 happy, 100 sad, 103 angry, 
+                    122 neutral, and 122 eyebrow raise) that the model’s prediction 
+                    became more reliable. This experience helped me understand one of 
+                    Buolamwini’s central arguments in Unmasking AI that machine learning 
+                    systems are only as good as the data they are trained on. 
                 </p>
 
+                <!-- Added section talking about the limitations of training on only one face and
+                 how it impacted bias-->
+                <h2>Model Limitations and Generalizability</h2>
+                <p>
+                    Despite improvements from dataset growth, significant limitations remain. 
+                    Most notably, the model was trained on only one face. Because of this, the 
+                    model learned features specific to one person’s facial structure, skin tone, 
+                    and lighting conditions. As a result, the model cannot be assumed to perform 
+                    equally well across different individuals. This reflects the same structural 
+                    risks Buolamwini warns about in large-scale systems, where narrow representation 
+                    leads to unequal performance and exclusion. Buolamwini explains that “the coded 
+                    gaze describes the ways in which the priorities, preferences, and prejudices of 
+                    those who have the power to shape technology can propagate harm, such as 
+                    discrimination and erasure” (Buolamwini, 2023, p. 10–11). Even in a small 
+                    student built project, bias can easily emerge when diversity is not 
+                    intentionally built into the dataset.
+                </p>
+                
+                <!-- Added justification for the emojis and discussing its design limitations-->
+                <h2>Design Choice wiith Emojis as a Output</h2>
+                <p>
+                    The decision to use emojis as output was intentional. Emojis provide a simplified and 
+                    widely recognizable visual language that allows users to instantly understand the model’s 
+                    prediction without relying on text. This makes the interface more accessible and engaging, 
+                    especially for young users or individuals with communication differences. However, emojis 
+                    also introduce limitations. Human emotions are complex, and reducing them to fixed 
+                    categories oversimplifies emotional expression. In addition, incorrect emoji output can 
+                    strongly reinforce misclassification by presenting errors in a confident visual form. 
+                    This shows how design choices can either support understanding or unintentionally 
+                    amplify model mistakes.
+                </p>
+                
+                <h2>Bias and Unmasking AI</h2>
                 <p>
                     Our teachable machine relates to Joy Buolamwini’s “Unmasking AI” as it 
                     directly looks at the idea of Bias in Facial Recognition. Instances in 
@@ -143,17 +188,17 @@
                     Vegas who was approached by security for being a sex worker and what 
                     happened was the facial recognition software in the camera had an error 
                     and mixed up this lady with another person (Buolamwini, 2023, p. 71). 
-                    This also relates to Buolamwini’s research done at MIT where their facial 
-                    recognition machine failed to recognize her face unless she was wearing a 
-                    white mask. In addition to this instance, there are countless others that 
-                    demonstrate how dangerous it is to have functioning algorithms that reflect
-                     bias of any kind. The most harrowing possibility of this being law 
-                     enforcement’s use of facial recognition technology as a means of 
-                     surveillance. When we are proactive about preventing algorithmic bias, 
-                     we ensure that everyone who engages with the tech is able to do so 
-                     equitably. 
+                    This also relates to Buolamwini’s MIT research which demonstrated how 
+                    systems struggled to recognize her face without a white mask. These examples 
+                    illustrate the real world consequences of training data that fails to represent 
+                    diverse populations.
                 </p>
-
+                <p>
+                    Our own project reflects this same risk. Because the model was trained using 
+                    a single individual, it indirectly reinforces the very bias Buolamwini critiques. 
+                    This project showed us that algorithmic inequality is not only a large scale 
+                    corporate issue, but something that can emerge even in small experimental systems.
+                </p>
                 <p>
                     An overarching lesson we found ourselves returning to was the need for 
                     facial recognition and machine learning algorithms to be applied equitably 
@@ -166,6 +211,20 @@
                     even academic contexts. One of the most notable examples from Unmasking AI 
                     was a medical application where the organ donor recipient was overlooked 
                     on account of their race. 
+                </p>
+                
+                <!-- Added future improvements based on feedback-->
+                <h2>Future Improvements</h2>
+                <p>
+                    If this project were continued, the biggest improvement would be expanding 
+                    the dataset to include more people with different skin tones, facial features, 
+                    and lighting conditions. This would help the model become more accurate and work 
+                    better for a wider range of users. Another improvement would be to test the 
+                    accuracy more formally instead of relying only on live webcam testing. Adding 
+                    confidence levels to predictions and improving how emojis represent mixed or 
+                    unclear expressions would also make the system more reliable. These changes 
+                    would help strengthen both the technical performance of the model and its ethical 
+                    impact.
                 </p>
             </div>
         </main>
